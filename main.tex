@@ -1,0 +1,104 @@
+%========== Preamble ==========
+% COMPILE WITH LUALATEX
+
+% Document class
+\documentclass[a4paper,12pt,dvipsnames]{scrartcl}
+
+\usepackage{lmodern} % set font
+\renewcommand{\familydefault}{\sfdefault} % whole document in sans serif 
+\usepackage[ngerman]{babel} % language
+
+% Other stuff
+%\usepackage{pdfcomment} % comment PDFs  
+\usepackage{mdwlist} % Interruption in lists
+
+% Text formatting
+\usepackage[normalem]{ulem} % Text highlighting 
+\usepackage[autostyle=true]{csquotes} % Package for the formatting of quotation marks
+\renewcommand{\mkblockquote}[4]{\enquote{#1}#2\ifterm{\relax}{#3}#4} % Quotation marks for \blockquote
+\renewcommand{\mkcitation}[1]{#1} % Correct depiction of footnotes with \blockquote
+\usepackage{ragged2e} % New switches and environments to change the text alignment
+\interfootnotelinepenalty10000  % Footnotes are displayed on the page on which the footnote appears in the text
+
+% Line spacing
+\usepackage{setspace} % Package for changing the line spacing within the text
+\expandafter\def\expandafter\quotation\expandafter{\quote\singlespacing} % Single line spacing in long quotations
+\onehalfspacing % 1.5 times line spacing throughout the document
+
+% Avoiding orphan lines and widow lines
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000 
+
+% Colors
+\usepackage{xcolor}
+
+% Graphics
+\usepackage{graphicx} % Insert graphics
+\usepackage{float} % Package for determining the position of tables/illustrations
+\usepackage[clockwise]{rotating} % Rotation of images & tables
+
+% Page formatting
+\usepackage[left= 4cm, right= 4cm, bottom= 2.5cm, top= 2.5cm]{geometry} % Side distances
+\usepackage{pdflscape} % Package for page rotation
+
+% Change Headline Font Size and Type
+\addtokomafont{disposition}{\sffamily}
+%\setkomafont{chapter}{\rmfamily\LARGE\bfseries} % Not necessary for the class 'scrartcl'
+\setkomafont{section}{\sffamily\Large\bfseries}
+\setkomafont{subsection}{\sffamily\large\bfseries}
+
+% Custom Date format
+\usepackage{datetime}
+\newdateformat{myformat}{\THEDAY{. }\monthname[\THEMONTH] \THEYEAR}
+
+% Citation
+\usepackage[style=apa, isbn=false, backend=biber]{biblatex}
+% Adding the literature
+\addbibresource{literature.bib}
+
+% new commands
+
+% Document information
+\usepackage{hyperref}
+\hypersetup{
+	pdftitle={},
+	pdfsubject={},
+	pdfauthor={},
+	pdfkeywords={},
+	colorlinks=true,
+	breaklinks=true,
+	citecolor=black,
+	linkcolor=black,
+	menucolor=black,
+	urlcolor=black
+}
+
+%========== Begin of the document ==========
+\begin{document}
+
+% Titlepage
+\input{titlepage.tex}
+
+% Table of Contents
+\newpage % Creates a new page
+\tableofcontents % Creates Table of Contents
+\thispagestyle{empty} 
+
+% Main part
+\newpage % Creates a new page
+\pagenumbering{arabic} % Switch to Arabic page numbering 
+\setcounter{page}{3} % set page numbers to value x		
+\input{outline.tex} 
+
+% References/Bibliography
+\newpage % Creates a new page   
+\addcontentsline{toc}{section}{Literatur}
+\printbibliography[heading=bibliography]
+
+\newpage % Creates a new page
+\input{affidavit.tex}
+
+\end{document}
+%========== End of the document ==========
+

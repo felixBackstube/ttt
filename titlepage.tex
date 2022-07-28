@@ -1,0 +1,70 @@
+%%%%%%%% Start document information %%%%%%%%
+\newcommand{\institut}{INSTITUT}
+\newcommand{\titel}{} % Title
+%\newcommand{\untertitel}{} % Subtitle
+\newcommand{\autor}{} % Author
+\newcommand{\betreuerin}{} % Supervisor
+\newcommand{\betreuer}{}
+\newcommand{\semester}{} % Semester
+\newcommand{\ausgabe}{XX.XX.202X} % Issue date (only relevant for thesis)
+\newcommand{\abgabe}{xx.xx.202X} % Submission date
+\newcommand{\adresse}{ADRESSE \\ PLZ ORT} % Adress
+\newcommand{\email}{\href{mailto:mail@example.com}{mail@example.com}} % E-Mail
+\newcommand{\studium}{Studiengang)} % Course of studies, Number of Semesters
+\newcommand{\matrikel}{} % Matriculation number
+%%%%%%%% End document information %%%%%%%%
+
+\newgeometry{left= 2.5cm, right= 2.5cm, bottom= 2.5cm, top= 2.5cm} % Modifies page spacing for the titlepage
+
+\begin{titlepage}
+
+\noindent\normalsize{UNIVERSITÄT} \\
+\normalsize{\institut} \\
+\normalsize{\semester}
+%\normalsize{Supervisor: \betreuer}\\
+
+\begin{center}
+\vspace{2.5cm}
+\noindent\rule{\textwidth}{1.5pt}
+\vspace{0.3cm}
+
+%\LARGE{\textbf{Bachelor Thesis}} \\ % If necessary, replace text with Master Thesis
+%\large{to obtain the academic degree}\\
+%\large{\glqq Bachelor of Science\grqq}\\ % If necessary, replace with the corresponding academic degree
+%\large{in the \semester}\\
+
+%\vspace{1cm}
+
+\LARGE{\textbf{\titel}} \\
+%\noindent\rule{0.5cm}{0.7pt} \\
+%\Large{\untertitel}
+
+\vspace{0.3cm}
+\noindent\rule{\textwidth}{1.5pt}
+\vspace{1cm}
+
+\Large{Abschlussarbeit}
+\vspace{0.5cm}
+
+\normalsize{Erstprüferin: \betreuerin} \\
+\normalsize{Zweitprüfer: \betreuer} \\
+\end{center}
+
+%\noindent\normalsize{\textbf{Submitted by:}} \hfill \normalsize{Issue date: \ausgabe}
+
+\vspace{3cm}
+
+\noindent\normalsize{Vorgelegt von:} \\
+\noindent\normalsize{\autor} \\ 
+\normalsize{\adresse} \\
+%\normalsize{Tel.: \telefon} \\
+\normalsize{E-Mail: \email} \\
+\normalsize{\studium} \\
+\normalsize{Matrikelnummer: \matrikel} \hfill \normalsize{Abgabe: \abgabe} 
+
+
+
+\end{titlepage}
+
+\restoregeometry % Restores page spacing
+
